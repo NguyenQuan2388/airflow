@@ -26,8 +26,7 @@ def print_welcome():
 
 def print_date():
     """Print current date and time"""
-    import datetime
-    print(f"Current date and time: {datetime.datetime.now()}")
+    print(f"Current date and time: {datetime.now()}")
     return "Date printed"
 
 
@@ -76,7 +75,6 @@ with DAG(
     context_task = PythonOperator(
         task_id='print_context',
         python_callable=print_context,
-        provide_context=True,
     )
 
     # Set task dependencies - demonstrating branching and joining
